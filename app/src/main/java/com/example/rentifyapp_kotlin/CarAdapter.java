@@ -1,13 +1,16 @@
 package com.example.rentifyapp_kotlin;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 
 import java.util.List;
 
@@ -35,17 +38,15 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CarViewHolder holder, int position) {
-        Car car = carList.get(position);
-        holder.bind(car, listener);
+        holder.bind(carList.get(position), listener);
     }
 
     @Override
-    public int getItemCount() {
-        return carList.size();
-    }
+    public int getItemCount() { return carList.size(); }
 
     static class CarViewHolder extends RecyclerView.ViewHolder {
         TextView tvCarTitle, tvCarPrice, tvCarPurpose, tvCarLocation;
+        ImageView ivCarImage;
 
         CarViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -53,6 +54,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
             tvCarPrice    = itemView.findViewById(R.id.tv_car_price);
             tvCarPurpose  = itemView.findViewById(R.id.tv_car_purpose);
             tvCarLocation = itemView.findViewById(R.id.tv_car_location);
+            ivCarImage    = itemView.findViewById(R.id.iv_car_image);
         }
 
         void bind(Car car, OnCarClickListener listener) {
@@ -61,6 +63,20 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.CarViewHolder> {
             tvCarPurpose.setText("rent".equals(car.getPurpose()) ? "For Rent" : "For Sale");
             tvCarLocation.setText(car.getLocation() != null && !car.getLocation().isEmpty()
                     ? car.getLocation() : "Location N/A");
+
+            if (ivCarImage != null) {
+                if (car.getImageUrl() != null && !car.getImageUrl().isEmpty()) {
+                    Glide.with(itemView.getContext())
+                            .load(car.getImageUrl())
+                            .transition(DrawableTransitionOptions.withCrossFade())
+                            .placeholder(R.drawable.ic_car_placeholder)
+                            .error(R.drawable.ic_car_placeholder)
+                            .centerCrop()
+                            .into(ivCarImage);
+                } else {
+                    ivCarImage.setImageResource(R.drawable.ic_car_placeholder);
+                }
+            }
 
             itemView.setOnClickListener(v -> listener.onCarClick(car));
         }

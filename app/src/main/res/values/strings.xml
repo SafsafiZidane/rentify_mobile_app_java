@@ -12,4 +12,22 @@
     <string name="welcome_to_our_app">Welcome to our app !</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_activity_cardetail">Cardetail</string>
+    <string-array name="purpose_options">
+        <item>Rent</item>
+        <item>Sale</item>
+    </string-array>
+    <string name="car_title_placeholder">Car Title</string>
+    <string name="price_placeholder">$100</string>
+    <string name="for_rent">For Rent</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="error_failed_to_load">Failed to load cars. Please try again.</string>
+    <string name="listed_by">Listed by: %1$s</string>
+    <string name="update_listing">Update Listing</string>
+    <string name="uid_label">UID: %1$s</string>
+    <string name="empty_favorites">No favorites yet. Tap ❤ on a car to save it.</string>
+    <string name="empty_notifications">No notifications yet.</string>
+    <string name="empty_cars">No cars available</string>
 </resources>

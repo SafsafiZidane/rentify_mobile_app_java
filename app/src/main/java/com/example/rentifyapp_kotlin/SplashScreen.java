@@ -7,9 +7,9 @@ import android.os.Looper;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -19,10 +19,14 @@ public class SplashScreen extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splash_screen);
 
-        new Handler(Looper.getMainLooper()).postDelayed(()-> {
-            Intent i = new Intent(SplashScreen.this, SignUpActivity.class);
-            startActivity(i);
-
-        },3000);
-    };
-    };
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            if (user != null) {
+                startActivity(new Intent(this, MainActivity.class));
+            } else {
+                startActivity(new Intent(this, LoginActivity.class));
+            }
+            finish();
+        }, 2500);
+    }
+}
