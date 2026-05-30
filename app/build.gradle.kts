@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -40,7 +41,10 @@ android {
 }
 
 dependencies {
+    implementation(libs.activity.ktx)
     implementation(libs.appcompat)
+    implementation(libs.cardview.v7)
+    implementation(libs.coordinatorlayout)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
@@ -51,10 +55,13 @@ dependencies {
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
+    implementation(libs.recyclerview.selection)
     implementation(libs.ui)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+    implementation(libs.firebase.auth)
+    implementation(libs.lottie)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

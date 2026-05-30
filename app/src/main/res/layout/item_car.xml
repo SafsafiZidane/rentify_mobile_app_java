@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title + Purpose Badge Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tv_car_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Car Title"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#1A1A2E"/>
+
+            <TextView
+                android:id="@+id/tv_car_purpose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="For Rent"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/badge_background"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+        </LinearLayout>
+
+        <!-- Price -->
+        <TextView
+            android:id="@+id/tv_car_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$0"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#2563EB"
+            android:layout_marginBottom="6dp"/>
+
+        <!-- Location -->
+        <TextView
+            android:id="@+id/tv_car_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📍 Location"
+            android:textSize="13sp"
+            android:textColor="#6B7280"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "389078747624",
+    "project_id": "rentifyapp-kotlin",
+    "storage_bucket": "rentifyapp-kotlin.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:389078747624:android:7ef05deadb0909baca3c5d",
+        "android_client_info": {
+          "package_name": "com.example.rentifyapp_kotlin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqSiZD3n27BNXtcfF6XTYgiIa5jrZXFzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

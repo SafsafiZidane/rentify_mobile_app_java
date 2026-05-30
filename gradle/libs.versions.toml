@@ -15,7 +15,13 @@ kotlin = "2.0.21"
 lifecycleRuntimeKtx = "2.10.0"
 activityCompose = "1.13.0"
 composeBom = "2024.09.00"
-
+googleGmsGoogleServices = "4.4.4"
+firebaseAuth = "24.0.1"
+lottie = "6.6.6"
+coordinatorlayout = "28.0.0"
+cardviewV7 = "28.0.0"
+recyclerviewSelection = "28.0.0"
+activityKtx = "1.13.0"
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -38,9 +44,16 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+coordinatorlayout = { group = "com.android.support", name = "coordinatorlayout", version.ref = "coordinatorlayout" }
+cardview-v7 = { group = "com.android.support", name = "cardview-v7", version.ref = "cardviewV7" }
+recyclerview-selection = { group = "com.android.support", name = "recyclerview-selection", version.ref = "recyclerviewSelection" }
+activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 
